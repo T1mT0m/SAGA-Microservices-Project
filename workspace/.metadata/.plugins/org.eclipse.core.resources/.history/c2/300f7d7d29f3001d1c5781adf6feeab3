@@ -1,0 +1,36 @@
+package com.github.bwar.sb.ms.saga.command.api.events;
+
+import org.axonframework.eventhandling.EventHandler;
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
+import com.github.bwar.sb.ms.saga.command.api.data.Order;
+import com.github.bwar.sb.ms.saga.command.api.data.OrderRepository;
+import com.github.bwar.sb.ms.saga.commomservice.events.OrderCompletedEvent;
+
+@Component
+public class OrderEventsHandler {
+	
+	private OrderRepository orderRepository;
+	
+	public OrderEventsHandler(OrderRepository orderRepository) {
+		this.orderRepository = orderRepository;
+	}
+
+	@EventHandler
+	public void on(OrderCreatedEvent orderCreatedEvent) {
+		Order order = Order.builder()
+				.orderId(orderCreatedEvent.getOrderId())
+		BeanUtils.copyProperties(orderCreatedEvent, order);
+		orderRepository.save(order);
+	}
+	
+	@EventHandler
+	public void on(OrderCompletedEvent orderCompletedEvent) {
+		Order order = orderRepository.
+				findById(orderCompletedEvent.getOrderId()).get();
+		order.setOrderId(orderCompletedEvent.getOrderStatus());
+		orderRepository.save(order);
+	}
+
+}

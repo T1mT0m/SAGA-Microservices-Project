@@ -1,0 +1,33 @@
+package com.github.bwar.sb.ms.saga.userservice.projection;
+
+import org.springframework.stereotype.Component;
+
+import com.github.bwar.sb.ms.saga.commomservice.model.CardDetails;
+import com.github.bwar.sb.ms.saga.commomservice.model.User;
+import com.github.bwar.sb.ms.saga.commomservice.queries.GetUserPaymentDetailsQuery;
+
+@Component
+public class userProjection {
+	
+	public User getUserPaymentQueryDetails(GetUserPaymentDetailsQuery query) {
+		
+		CardDetails cardDetails = CardDetails.builder()
+				.name("Biju Warrier")
+				.validUntilMonth(03)
+				.validUntilYear(2024)
+				.cardnumber("123456789")
+				.cvv(321)
+				.build();
+		
+		User user = User.builder()
+				.userId(query.getUserId())
+				.firstName("Biju")
+				.lastname("Warrier")
+				.cardDetails(cardDetails)
+				.build();
+		
+		return user;
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.github.bwar.sb.ms.shipmentservice.saga.command.api.events;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ShipmentEventhandler {
+	
+
+}

@@ -1,0 +1,5 @@
+package com.github.bwar.sb.ms.saga.command.api.data;
+
+public interface OrderRepository {
+
+}

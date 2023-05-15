@@ -1,0 +1,24 @@
+package com.github.bwar.sb.ms.saga.command.api.saga;
+
+import org.axonframework.modelling.saga.SagaEventHandler;
+import org.axonframework.modelling.saga.StartSaga;
+import org.axonframework.spring.stereotype.Saga;
+
+import com.github.bwar.sb.ms.saga.command.api.events.OrderCreatedEvent;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Saga
+@Slf4j
+public class OrderProcessingSaga {
+	
+	@StartSaga
+	@SagaEventHandler(associationProperty = "orderId")
+	private void handle (OrderCreatedEvent orderCreatedEvent) {
+		log.info("OrdderCreatedEvent in SAGA for order id : {}", 
+				orderCreatedEvent.getOrderId());
+		
+	}
+	
+
+}

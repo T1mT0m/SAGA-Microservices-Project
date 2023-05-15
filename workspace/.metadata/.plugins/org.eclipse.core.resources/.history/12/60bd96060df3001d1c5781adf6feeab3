@@ -1,0 +1,16 @@
+package com.github.bwar.sb.ms.saga.commomservice.commands;
+
+import com.github.bwar.sb.ms.saga.commomservice.model.CardDetails;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class ValidatePaymentCommand {
+	
+	private String paymentId;
+	private String orderid;
+	private CardDetails cardDetails;
+
+}

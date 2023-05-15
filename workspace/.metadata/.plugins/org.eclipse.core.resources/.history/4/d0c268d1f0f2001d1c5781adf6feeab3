@@ -1,0 +1,11 @@
+package com.github.bwar.sb.ms.saga.commomservice.commands;
+
+import com.github.bwar.sb.ms.saga.commomservice.model.CardDetails;
+
+public class ValidatePaymentCommand {
+	
+	private String paymentId;
+	private String orderid;
+	private CardDetails cardDetails;
+
+}

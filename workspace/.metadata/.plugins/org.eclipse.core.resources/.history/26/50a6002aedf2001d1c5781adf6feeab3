@@ -1,0 +1,5 @@
+package com.github.bwar.sb.ms.saga.commomservice.commands;
+
+public class ValidatePaymentCommand {
+
+}

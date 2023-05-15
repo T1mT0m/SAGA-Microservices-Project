@@ -1,0 +1,6 @@
+INDEX VERSION 1.132+C:\Biju\Youtube\Daily.Code.Buffer\SAGA.Driven.Microservices\workspace\.metadata\.plugins\org.eclipse.jdt.core
+2963901233.index
+1423902306.index
+3935155338.index
+4036153649.index
+1865797976.index

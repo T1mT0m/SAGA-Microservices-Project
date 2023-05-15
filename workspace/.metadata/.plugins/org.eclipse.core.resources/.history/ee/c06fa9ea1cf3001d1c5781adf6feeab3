@@ -1,0 +1,26 @@
+package com.github.bwar.sb.ms.shipmentservice.saga.command.api.aggregate;
+
+import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.spring.stereotype.Aggregate;
+
+import com.github.bwar.sb.ms.saga.commomservice.commands.ShipOrderCommand;
+
+@Aggregate
+public class ShipmentAggregate {
+	
+	@AggregateIdentifier
+	private String shipmentId;
+	private String orderId;
+	private String shipmentStatus;
+	
+	public ShipmentAggregate() {}
+	
+	@CommandHandler
+	public ShipmentAggregate(ShipOrderCommand shipOrder) {
+		//validate the command
+		//publish the Order shipped event
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.github.bwar.sb.ms.saga.command.api.events;
+
+import org.axonframework.eventhandling.EventHandler;
+import org.springframework.stereotype.Component;
+
+@Component
+public class OrderEventsHandler {
+	
+	@EventHandler
+	public void on(OrderCreatedEvent orderCreatedEvent) {
+		
+	}
+
+}

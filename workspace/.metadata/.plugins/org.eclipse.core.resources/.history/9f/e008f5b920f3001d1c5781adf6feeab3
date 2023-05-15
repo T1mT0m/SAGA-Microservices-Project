@@ -1,0 +1,13 @@
+package com.github.bwar.sb.ms.shipmentservice.saga.command.api.events;
+
+import org.axonframework.eventhandling.EventHandler;
+import org.springframework.stereotype.Component;
+
+import com.github.bwar.sb.ms.saga.commomservice.events.OrderShippedEvent;
+
+@Component
+public class ShipmentEventsHandler {
+	
+	@EventHandler
+	public void on(OrderShippedEvent event)
+}

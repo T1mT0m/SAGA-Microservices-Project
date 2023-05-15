@@ -1,0 +1,12 @@
+package com.github.bwar.sb.ms.saga.commomservice.commands;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class ShipOrderCommand {
+	private String ShipmentId;
+	private String orderId;
+
+}

@@ -1,0 +1,14 @@
+package com.github.bwar.sb.ms.shipmentservice.saga.command.api.aggregate;
+
+import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.spring.stereotype.Aggregate;
+
+@Aggregate
+public class ShipmentAggregate {
+	
+	@AggregateIdentifier
+	private String shipmentId;
+	private String orderId;
+	private String shipmentStatus;
+
+}

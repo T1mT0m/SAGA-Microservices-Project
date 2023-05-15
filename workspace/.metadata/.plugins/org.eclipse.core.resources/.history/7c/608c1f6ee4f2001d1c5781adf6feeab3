@@ -1,0 +1,28 @@
+package com.github.bwar.sb.ms.saga.aggregate;
+
+import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.spring.stereotype.Aggregate;
+
+import com.github.bwar.sb.ms.saga.command.api.command.CreateOrderCommand;
+
+@Aggregate
+public class OrderAggregate {
+	
+	@AggregateIdentifier
+	private String OrderId;
+	private String productId;
+	private String userId;
+	private String addressId;
+	private Integer quantity;
+	private String orderStatus;
+	
+	public OrderAggregate() {}
+	
+	public OrderAggregate(CreateOrderCommand createOrderCommand) {
+		
+		
+	}
+	
+
+
+}

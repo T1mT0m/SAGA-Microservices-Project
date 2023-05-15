@@ -1,0 +1,17 @@
+package com.github.bwar.sb.ms.saga.events;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class OrderCreatedEvent {
+
+	private String OrderId;
+	private String productId;
+	private String userId;
+	private String addressId;
+	private Integer quantity;
+	private String orderStatus;
+
+}

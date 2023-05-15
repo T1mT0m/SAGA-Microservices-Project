@@ -1,0 +1,5 @@
+package com.github.bwar.sb.ms.saga.userservice.projection;
+
+public class userProjection {
+
+}

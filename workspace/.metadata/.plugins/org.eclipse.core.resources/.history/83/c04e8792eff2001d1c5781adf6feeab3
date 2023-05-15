@@ -1,0 +1,33 @@
+package com.github.bwar.sb.ms.saga.command.api.saga;
+
+import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.axonframework.modelling.saga.SagaEventHandler;
+import org.axonframework.modelling.saga.StartSaga;
+import org.axonframework.queryhandling.QueryGateway;
+import org.axonframework.spring.stereotype.Saga;
+
+import com.github.bwar.sb.ms.saga.command.api.events.OrderCreatedEvent;
+import com.github.bwar.sb.ms.saga.commomservice.commands.ValidatePaymentCommand;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Saga
+@Slf4j
+public class OrderProcessingSaga {
+	
+	private CommandGateway commandGateway;
+	private QueryGateway queryGateway;
+	
+	@StartSaga
+	@SagaEventHandler(associationProperty = "orderId")
+	private void handle (OrderCreatedEvent orderCreatedEvent) {
+		log.info("OrdderCreatedEvent in SAGA for order id : {}", 
+				orderCreatedEvent.getOrderId());
+		
+		ValidatePaymentCommand validatePaymentCommand = 
+				ValidatePaymentCommand.builder().build();
+		
+	}
+	
+
+}

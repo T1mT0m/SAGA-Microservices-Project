@@ -1,0 +1,17 @@
+package com.github.bwar.sb.ms.saga.paymentservice.command.api.aggregate;
+
+import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.spring.stereotype.Aggregate;
+
+import com.github.bwar.sb.ms.saga.commomservice.model.CardDetails;
+
+@Aggregate
+public class PaymentAggregate {
+	@AggregateIdentifier
+	private String paymentId;
+	private String orderid;
+	private String paymentStatus;
+	
+	
+
+}
